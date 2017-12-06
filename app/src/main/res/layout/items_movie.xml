@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     app:cardElevation="4dp">
 
 <RelativeLayout
@@ -13,9 +13,10 @@
 
     <ImageView
         android:id="@+id/iv_movie_logo"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
         android:src="@drawable/img_dummy_cook_up_a_storm"
+        android:scaleType="centerCrop"
         />
 
     <ImageView
@@ -23,8 +24,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_favorite_black_36dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="4dp"
         />
+
 
     <TextView
         android:id="@+id/tv_rating"
@@ -32,14 +34,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="7.5"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="4dp"
         android:padding="6dp"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textAlignment="center"
         />
 
+    <ImageView
+        android:id="@+id/iv_fullscreen"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/img_dummy_fullscreen"
+        android:layout_alignBottom="@id/iv_movie_logo"
+        android:layout_alignRight="@id/iv_movie_logo"
+        />
+
     <TextView
-        android:id="@+id/tv_title_cook_up_with_storm"
+        android:id="@+id/tv_movie_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cook up with Storm"
@@ -54,8 +65,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cook_up_with_storm"
-        android:layout_alignLeft="@id/tv_title_cook_up_with_storm"
-        android:layout_below="@id/tv_title_cook_up_with_storm"
+        android:layout_alignLeft="@id/tv_movie_title"
+        android:layout_below="@id/tv_movie_title"
         android:textColor="@color/primary_text"
         android:layout_marginTop="4dp"/>
 
@@ -64,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Current Popularity"
-        android:layout_alignLeft="@id/tv_title_cook_up_with_storm"
+        android:layout_alignLeft="@id/tv_movie_title"
         android:layout_below="@id/tv_movie_genres"
         android:textColor="@color/primary_text"
         android:layout_marginTop="4dp"/>
@@ -84,7 +95,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:numStars="6"
-        android:layout_alignLeft="@id/tv_title_cook_up_with_storm"
+        android:rating="6"
+        android:layout_alignLeft="@id/tv_movie_title"
         android:layout_below="@id/tv_current_popularity"
         />
 
@@ -94,10 +106,10 @@
         android:layout_height="wrap_content"
         android:text="Movie Overview"
         android:textAllCaps="false"
-        android:layout_alignLeft="@id/tv_title_cook_up_with_storm"
-        android:layout_below="@id/rb_rating"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="60dp"
+        android:layout_alignBottom="@id/iv_movie_logo"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
         android:padding="5dp"
         android:background="@color/primary"
         android:textColor="@color/icons"
