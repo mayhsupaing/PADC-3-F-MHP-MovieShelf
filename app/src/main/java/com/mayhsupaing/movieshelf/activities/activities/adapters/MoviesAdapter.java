@@ -44,11 +44,12 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                 R.drawable.img_dummy_battle_ship_island,
                 R.drawable.img_dummy_it};
 
-    private String[] movieGenres={" ",
+    private String[] movieGenres={
             "(Food, Comedy, Romance)",
             "(Action, Adventure, Mystery, Comedy)",
             "(Comedy, Family)",
             "(Comedy, Family)",
+            "( Fantasy, Drama)",
             "(Comedy, Family)",
             "(Adventure, Comedy)",
             "Medical",
