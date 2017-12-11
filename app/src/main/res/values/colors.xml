@@ -9,5 +9,6 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
     <color name="star">	#FFFF00</color>
+    <color name="full_black">#000</color>
 </resources>
 

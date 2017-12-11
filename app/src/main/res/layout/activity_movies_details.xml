@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp">
+
+            <ImageView
+                android:id="@+id/iv_movie_details_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.3"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_dummy_movies_details_bg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_movie_detail_image"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/img_dummy_diary_of_wimpy_kids" />
+
+                <TextView
+                    android:id="@+id/tv_rating_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/ic_favorite_black_36dp"
+                    android:padding="12dp"
+                    android:text="7.5"
+                    android:textColor="@color/icons" />
+
+                <ImageView
+                    android:id="@+id/iv_fullscreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/iv_movie_detail_image"
+                    android:layout_alignRight="@id/iv_movie_detail_image"
+                    android:src="@drawable/img_dummy_fullscreen" />
+
+                <TextView
+                    android:id="@+id/tv_movies_details_title"
+                    style="@style/white_text_black_border"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/iv_movie_detail_image"
+                    android:layout_toRightOf="@id/iv_movie_detail_image"
+                    android:text="The Long Haul"
+                    android:textColor="@color/icons"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_movie_details_decription"
+                    style="@style/white_text_black_border"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/tv_movies_details_title"
+                    android:layout_below="@id/tv_movies_details_title"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/movies_details_description"
+                    android:textColor="@color/icons"
+                    android:textSize="12sp" />
+
+                <RatingBar
+                    android:id="@+id/rb_rating"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_movie_detail_image"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:numStars="20"
+                    android:rating="20" />
+
+                <TextView
+                    android:id="@+id/tv_released_date"
+                    style="@style/white_text_black_border"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/rb_rating"
+                    android:layout_below="@id/rb_rating"
+                    android:text="Released : January 2017"
+                    android:textColor="@color/icons" />
+
+            </RelativeLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_add_black_24dp"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="right|bottom" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/primary"
+            android:text="Diary of A Wimpy Kids"
+            android:textColor="@color/icons"
+            android:padding="8dp"/>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

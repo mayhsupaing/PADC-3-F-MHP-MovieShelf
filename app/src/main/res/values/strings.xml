@@ -2,4 +2,6 @@
     <string name="app_name">Movie Shelf</string>
     <string name="action_settings">Settings</string>
     <string name="cook_up_with_storm"><b>(Food, Comedy, Romance)</b></string>
+
+    <string name="movies_details_description">Young Greg Heffley is looking forward to a long summer of just hanging out, but his mother throws a monkey wrench into his plans when she forces the entire family to take a road trip for a relative birthday celebration.</string>
 </resources>

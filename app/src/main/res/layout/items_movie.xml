@@ -16,7 +16,7 @@
             android:layout_width="120dp"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_dummy_cook_up_a_storm" />
+            android:src="@drawable/img_dummy_diary_of_wimpy_kids" />
 
 
         <TextView
@@ -47,7 +47,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/iv_movie_logo"
-            android:text="Cook up with Storm"
+            android:text="The Long Haul"
             android:textColor="@color/primary_text" />
 
         <TextView
