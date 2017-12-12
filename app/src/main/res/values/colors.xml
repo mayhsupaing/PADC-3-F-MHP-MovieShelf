@@ -10,5 +10,6 @@
     <color name="divider">#BDBDBD</color>
     <color name="star">	#FFFF00</color>
     <color name="full_black">#000</color>
+    <color name="sky_blue">#448AFF</color>
 </resources>
 
