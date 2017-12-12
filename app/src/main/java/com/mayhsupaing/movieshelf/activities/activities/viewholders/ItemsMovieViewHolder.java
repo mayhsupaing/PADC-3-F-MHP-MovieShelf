@@ -15,7 +15,6 @@ import org.w3c.dom.Text;
 
 public class ItemsMovieViewHolder extends RecyclerView.ViewHolder {
 
-
     public ItemsMovieViewHolder(View itemView) {
         super(itemView);
 
