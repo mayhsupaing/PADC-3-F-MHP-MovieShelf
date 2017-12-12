@@ -19,21 +19,17 @@ import com.mayhsupaing.movieshelf.activities.activities.adapters.MoviesDetailsAd
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Lenovo on 12/11/2017.
- */
+
+
 
 public class MoviesDetailsActivity extends AppCompatActivity {
 
-    /*@BindView(R.id.rv_movies_details_trailer)
+    @BindView(R.id.rv_movies_details_trailer)
     RecyclerView rvMoviesDetails;
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-
-    @BindView(R.id.fab)
-    FloatingActionButton floatingActionButton;*/
-
+    /*@BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+*/
     private MoviesDetailsAdapter moviesDetailsAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,12 +37,15 @@ public class MoviesDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movies_details);
         ButterKnife.bind(this,this);
 
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-       /* moviesDetailsAdapter=new MoviesDetailsAdapter();
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext(),
-                LinearLayoutManager.HORIZONTAL,false);
-        rvMoviesDetails.setLayoutManager(linearLayoutManager);
-        rvMoviesDetails.setAdapter(moviesDetailsAdapter);*/
+        moviesDetailsAdapter=new MoviesDetailsAdapter();
+        LinearLayoutManager LinearLayoutManager=new LinearLayoutManager(getApplicationContext(),
+                android.support.v7.widget.LinearLayoutManager.HORIZONTAL,false);
+        rvMoviesDetails.setLayoutManager(LinearLayoutManager);
+        rvMoviesDetails.setAdapter(moviesDetailsAdapter);
+
+
     }
 }

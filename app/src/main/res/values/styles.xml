@@ -25,4 +25,12 @@
         <item name="android:shadowColor">@color/full_black</item>
     </style>
 
+    <style name="Divider">
+        <item name="android:layout_width">2dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@color/divider</item>
+    </style>
+
 </resources>

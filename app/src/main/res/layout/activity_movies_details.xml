@@ -2,8 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -14,17 +13,17 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="260dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            android:fitsSystemWindows="true">
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
                 android:id="@+id/iv_movie_details_logo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:alpha="0.3"
+                android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_dummy_movies_details_bg"
-                android:fitsSystemWindows="true"/>
+                android:src="@drawable/img_dummy_movies_details_bg" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -53,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/iv_movie_detail_image"
-                    android:layout_alignRight="@id/iv_movie_detail_image"
+                    android:layout_marginLeft="100dp"
                     android:src="@drawable/img_dummy_fullscreen" />
 
                 <TextView
@@ -112,18 +111,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"
+        android:fitsSystemWindows="true"
         android:padding="8dp"
         android:src="@drawable/ic_add_black_24dp"
         app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="right|bottom"
-        android:fitsSystemWindows="true"/>
+        app:layout_anchorGravity="right|bottom" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/primary"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:fitsSystemWindows="true">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -157,6 +155,10 @@
                     android:text="Road Movie"
                     android:textSize="12sp" />
 
+
+                <View style="@style/Divider"></View>
+
+
                 <TextView
                     android:id="@+id/tv_movies_genres_family"
                     android:layout_width="wrap_content"
@@ -166,6 +168,8 @@
                     android:padding="4dp"
                     android:text="Family"
                     android:textSize="12sp" />
+
+                <View style="@style/Divider"></View>
 
                 <TextView
                     android:id="@+id/tv_movies_genres_comedy"
@@ -178,7 +182,6 @@
                     android:textSize="12sp" />
 
             </LinearLayout>
-
 
             <TextView
                 android:id="@+id/tv_movies_hours"
@@ -193,63 +196,57 @@
                 android:textColor="@color/icons" />
 
 
-        <!--    <android.support.v7.widget.RecyclerView
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_movies_details_trailer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/tv_movies_hours"
-                android:layout_marginLeft="8dp"
-                android:paddingTop="8dp">
+                android:layout_below="@id/tv_movies_hours">
 
-            </android.support.v7.widget.RecyclerView>-->
-
+            </android.support.v7.widget.RecyclerView>
 
             <TextView
                 android:id="@+id/tv_movies_details_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/movies_review"
-                android:layout_below="@id/tv_movies_hours"
-                android:paddingTop="8dp"
+                android:layout_below="@id/rv_movies_details_trailer"
                 android:layout_marginLeft="8dp"
-                android:textColor="@color/icons"
-                />
+                android:paddingTop="8dp"
+                android:text="@string/movies_review"
+                android:textColor="@color/icons" />
 
             <TextView
                 android:id="@+id/tv_movies_details_fan_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/movies_fan_review"
                 android:layout_below="@id/tv_movies_details_review"
-                android:paddingTop="8dp"
                 android:layout_marginLeft="8dp"
-                android:textColor="@color/icons"
-                />
+                android:paddingTop="8dp"
+                android:text="@string/movies_fan_review"
+                android:textColor="@color/icons" />
 
             <TextView
                 android:id="@+id/tv_movies_details_fan_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Very Good : 9.5/10"
                 android:layout_below="@id/tv_movies_details_fan_review"
                 android:layout_marginLeft="8dp"
-                android:textColor="@color/icons"
-                />
+                android:text="Very Good : 9.5/10"
+                android:textColor="@color/icons" />
 
             <TextView
                 android:id="@+id/tv_movies_details_full_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/movies_details_full_preview"
                 android:layout_below="@id/tv_movies_details_fan_comment"
-                android:paddingTop="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginBottom="12dp"
                 android:layout_marginLeft="8dp"
-                android:textColor="@color/icons"
-                />
-
+                android:layout_marginRight="8dp"
+                android:paddingTop="8dp"
+                android:text="@string/movies_details_full_preview"
+                android:textColor="@color/icons" />
 
         </RelativeLayout>
+
     </android.support.v4.widget.NestedScrollView>
 
 

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         moviesAdapter=new MoviesAdapter();
         LinearLayoutManager LinearLayoutManager=new LinearLayoutManager(getApplicationContext(),
-                android.support.v7.widget.LinearLayoutManager.VERTICAL,false);
+                android.support.v7.widget.LinearLayoutManager.HORIZONTAL,false);
         rvMovie.setLayoutManager(LinearLayoutManager);
         rvMovie.setAdapter(moviesAdapter);
 
