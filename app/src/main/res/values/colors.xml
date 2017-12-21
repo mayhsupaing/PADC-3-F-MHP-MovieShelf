@@ -11,5 +11,6 @@
     <color name="star">	#FFFF00</color>
     <color name="full_black">#000</color>
     <color name="sky_blue">#448AFF</color>
+    <color name="title_text">#FFF</color>
 </resources>
 

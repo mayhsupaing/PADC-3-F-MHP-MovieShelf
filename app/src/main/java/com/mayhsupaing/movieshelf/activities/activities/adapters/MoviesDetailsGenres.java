@@ -7,24 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mayhsupaing.movieshelf.R;
-import com.mayhsupaing.movieshelf.activities.activities.delegates.MovieActionDelegate;
-import com.mayhsupaing.movieshelf.activities.activities.viewholders.ItemsMovieDetailsViewHolder;
+import com.mayhsupaing.movieshelf.activities.activities.viewholders.ItemsMoviesDetailsGenres;
 
+/**
+ * Created by Lenovo on 12/16/2017.
+ */
 
-
-
-
-public class MoviesDetailsAdapter extends RecyclerView.Adapter {
-
-
-
+public class MoviesDetailsGenres extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context=parent.getContext();
         LayoutInflater inflater=LayoutInflater.from(context);
-        View movieItemsDetailsView=inflater.inflate(R.layout.items_movies_details_trailer,parent,false);
-        ItemsMovieDetailsViewHolder itemsMovieDetailsViewHolder=new ItemsMovieDetailsViewHolder(movieItemsDetailsView);
-        return itemsMovieDetailsViewHolder;
+        View movieItemsDetailsGenresView=inflater.inflate(R.layout.items_movies_genres,parent,false);
+        ItemsMoviesDetailsGenres itemsMovieDetailsGenresViewHolder=new ItemsMoviesDetailsGenres(movieItemsDetailsGenresView);
+        return itemsMovieDetailsGenresViewHolder;
     }
 
     @Override
@@ -34,6 +30,6 @@ public class MoviesDetailsAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 3;
     }
 }

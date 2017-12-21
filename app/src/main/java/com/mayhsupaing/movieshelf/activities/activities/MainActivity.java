@@ -1,5 +1,6 @@
 package com.mayhsupaing.movieshelf.activities.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,11 +14,12 @@ import android.view.MenuItem;
 
 import com.mayhsupaing.movieshelf.R;
 import com.mayhsupaing.movieshelf.activities.activities.adapters.MoviesAdapter;
+import com.mayhsupaing.movieshelf.activities.activities.delegates.MovieActionDelegate;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MovieActionDelegate{
 
     @BindView(R.id.rv_movie)
     RecyclerView rvMovie;
@@ -40,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        moviesAdapter=new MoviesAdapter();
+        moviesAdapter=new MoviesAdapter(this);
         LinearLayoutManager LinearLayoutManager=new LinearLayoutManager(getApplicationContext(),
-                android.support.v7.widget.LinearLayoutManager.HORIZONTAL,false);
+                android.support.v7.widget.LinearLayoutManager.VERTICAL,false);
         rvMovie.setLayoutManager(LinearLayoutManager);
         rvMovie.setAdapter(moviesAdapter);
 
@@ -76,5 +78,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onTapMovieItems() {
+        Intent intent=new Intent(getApplicationContext(),MoviesDetailsActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapMovieTitle() {
+
+    }
+
+    @Override
+    public void onTapMovieOverViewButton() {
+
     }
 }
