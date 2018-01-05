@@ -5,9 +5,9 @@ package com.mayhsupaing.movieshelf.activities.activities.data.vo;
  */
 
 public class GenresVO {
-   private Integer genresId;
+   private int genresId;
 
-    public Integer getGenresId() {
+    public int getGenresId() {
         return genresId;
     }
 }

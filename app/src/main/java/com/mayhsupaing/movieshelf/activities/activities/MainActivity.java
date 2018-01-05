@@ -8,13 +8,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mayhsupaing.movieshelf.R;
 import com.mayhsupaing.movieshelf.activities.activities.adapters.MoviesAdapter;
+import com.mayhsupaing.movieshelf.activities.activities.data.models.MoviesModel;
 import com.mayhsupaing.movieshelf.activities.activities.delegates.MovieActionDelegate;
+import com.mayhsupaing.movieshelf.activities.activities.events.LoadedMovieEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements MovieActionDelega
         rvMovie.setLayoutManager(LinearLayoutManager);
         rvMovie.setAdapter(moviesAdapter);
 
+        MoviesModel.getsObjInstance().loadMovies();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +65,18 @@ public class MainActivity extends AppCompatActivity implements MovieActionDelega
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -95,5 +116,11 @@ public class MainActivity extends AppCompatActivity implements MovieActionDelega
     @Override
     public void onTapMovieOverViewButton() {
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMoviesLoaded(LoadedMovieEvent event){
+        Log.d(MMMoviesApp.LOG_TAG,"onMoviesLoaded"+event.getMovieList().size());
+        moviesAdapter.setMovies(event.getMovieList());
     }
 }

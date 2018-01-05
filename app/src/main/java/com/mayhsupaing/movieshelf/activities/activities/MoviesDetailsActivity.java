@@ -48,7 +48,8 @@ public class MoviesDetailsActivity extends AppCompatActivity {
        /* TextView textDescriptionScrollable=(TextView)findViewById(R.id.tv_movie_details_description);
         textDescriptionScrollable.setMovementMethod(new ScrollingMovementMethod());*/
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         rvMoviesDetails.setHasFixedSize(true);
         moviesDetailsAdapter=new MoviesDetailsAdapter();

@@ -17,7 +17,7 @@
             android:layout_width="120dp"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_dummy_diary_of_wimpy_kids" />
+            android:src="@drawable/img_dummy_diary_of_wimpy_kids"/>
 
 
         <TextView

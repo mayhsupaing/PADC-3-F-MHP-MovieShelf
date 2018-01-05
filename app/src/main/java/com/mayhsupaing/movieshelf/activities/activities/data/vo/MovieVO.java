@@ -1,5 +1,7 @@
 package com.mayhsupaing.movieshelf.activities.activities.data.vo;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -7,35 +9,51 @@ import java.util.List;
  */
 
 public class MovieVO {
-    private Integer voteCount;
-    private Integer id;
-    private Boolean video;
-    private Double voteAverage;
+
+    @SerializedName("vote_count")
+    private int voteCount;
+    private int id;
+    private boolean video;
+
+    @SerializedName("vote_average")
+    private double voteAverage;
     private String title;
-    private Double popularity;
+    private float popularity;
+
+    @SerializedName("poster_path")
     private String posterPath;
+
+    @SerializedName("original_language")
     private String originalLanguage;
+
+    @SerializedName("original_title")
     private String originalTitle;
+
+    @SerializedName("backdrop_path")
     private String backdropPath;
-    private Boolean adult;
+    private boolean adult;
     private String overview;
+
+    @SerializedName("release_date")
     private String releaseDate;
 
+    @SerializedName("genre_ids")
     private List<Integer> genresId;
 
-    public Integer getVoteCount() {
+
+    public int getVoteCount() {
         return voteCount;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public Boolean getVideo() {
+    public boolean isVideo() {
         return video;
     }
 
-    public Double getVoteAverage() {
+    public double getVoteAverage() {
         return voteAverage;
     }
 
@@ -43,7 +61,7 @@ public class MovieVO {
         return title;
     }
 
-    public Double getPopularity() {
+    public float getPopularity() {
         return popularity;
     }
 
@@ -63,7 +81,7 @@ public class MovieVO {
         return backdropPath;
     }
 
-    public Boolean getAdult() {
+    public boolean isAdult() {
         return adult;
     }
 

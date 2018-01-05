@@ -11,42 +11,51 @@ import android.widget.TextView;
 
 import com.mayhsupaing.movieshelf.R;
 import com.mayhsupaing.movieshelf.activities.activities.MainActivity;
+import com.mayhsupaing.movieshelf.activities.activities.data.vo.MovieVO;
 import com.mayhsupaing.movieshelf.activities.activities.delegates.MovieActionDelegate;
 import com.mayhsupaing.movieshelf.activities.activities.viewholders.ItemsMovieViewHolder;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.zip.Inflater;
 
 /**
  * Created by Lenovo on 12/6/2017.
  */
 
-public class MoviesAdapter extends RecyclerView.Adapter{
-    public MovieActionDelegate eMovieActionDelegate;
+public class MoviesAdapter extends RecyclerView.Adapter<ItemsMovieViewHolder>{
+    public MovieActionDelegate mMovieActionDelegate;
+    private List<MovieVO> mMovieList;
 
     public MoviesAdapter(MovieActionDelegate movieActionDelegate) {
-        eMovieActionDelegate = movieActionDelegate;
+        mMovieActionDelegate = movieActionDelegate;
+        mMovieList=new ArrayList<>();
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ItemsMovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context=parent.getContext();
         LayoutInflater inflater=LayoutInflater.from(context);
         View movieItemView=inflater.inflate(R.layout.items_movie,parent,false);
-        ItemsMovieViewHolder itemMovieHolder=new ItemsMovieViewHolder(movieItemView,eMovieActionDelegate);
+        ItemsMovieViewHolder itemMovieHolder=new ItemsMovieViewHolder(movieItemView,mMovieActionDelegate);
         return itemMovieHolder;
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(ItemsMovieViewHolder holder, int position) {
+        holder.setMovie(mMovieList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return mMovieList.size();
     }
 
+    public void setMovies(List<MovieVO> movieList){
+        mMovieList=movieList;
+        notifyDataSetChanged();
+    }
 
 }
