@@ -27,6 +27,7 @@ import java.util.zip.Inflater;
 
 public class MoviesAdapter extends RecyclerView.Adapter<ItemsMovieViewHolder>{
     public MovieActionDelegate mMovieActionDelegate;
+
     private List<MovieVO> mMovieList;
 
     public MoviesAdapter(MovieActionDelegate movieActionDelegate) {

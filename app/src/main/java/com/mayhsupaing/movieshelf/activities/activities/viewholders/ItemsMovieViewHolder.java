@@ -56,7 +56,7 @@ public class ItemsMovieViewHolder extends RecyclerView.ViewHolder {
         tvRating.setText(Double.toString(movies.getVoteAverage()));
 
         Glide.with(ivMoviePoster.getContext())
-                .load(movies.getPosterPath())
+                .load("http://image.tmdb.org/t/p/original"+movies.getPosterPath())
                 .into(ivMoviePoster);
 
     }
